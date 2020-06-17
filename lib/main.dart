@@ -202,6 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void makeConnection(BuildContext context) async {
     print("make Connection begining...");
+    createSnack(context,Icons.info_outline,Colors.blue.shade300,'Connection','Connecting to the button begin');
     //String connectionState = await WifiConfiguration.connectToWifi("Smart Button", "", "com.example.smart_button");
     String connectionState = await WifiConfiguration.connectToWifi("Smart Button", "", "com.example.smart_button");
     print("ConnectionState : $connectionState");
@@ -219,6 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //return ssidList.toSet().toList();
   }
   
+  //pop message
   void createSnack(BuildContext context,icon,color,String title,String msg){
     Flushbar(
       flushbarStyle: FlushbarStyle.FLOATING,
